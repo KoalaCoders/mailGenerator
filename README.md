@@ -6,7 +6,9 @@ Create:
 <br>
 <br>
 <br>
-Run: `$ node parser.js`
+Run: 
+* `npm install`
+* `$ node parser.js`
 <br>
 <br>
 <br>
