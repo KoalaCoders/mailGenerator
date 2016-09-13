@@ -7,7 +7,7 @@ Create:
 <br>
 <br>
 Run: 
-* `npm install`
+* `$ npm install`
 * `$ node parser.js`
 <br>
 <br>
