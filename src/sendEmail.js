@@ -1,4 +1,6 @@
 const nodemailer = require('nodemailer');
+const fs = require('fs');
+const mails = require('./data.js');
 
 function sendEmail(data) {
   const transporter = nodemailer.createTransport({
@@ -13,15 +15,14 @@ function sendEmail(data) {
 
   const mailOptions = {
       from: `"KoalaCoders" <${data.mail}>`, // sender address
-      to: 'igor.motorny@railsreactor.com', // list of receivers
+      to: mails.join(', '), // list of receivers
       subject: 'KPI JavaScript courses', // Subject line
-      text: 'Hello world 🐴', // plaintext body
-      html: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScBwYgQsgb_mSIjTEZIltPzy2kLyPwUCymE6KDUU_ZIL1y-jg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>' // html body
+      html: fs.readFileSync('./data/mail.html').toString() // html body
   };
 
 
   transporter.sendMail(mailOptions, (error, info) => {
-      if(error){
+      if (error) {
           return console.log(error);
       }
       console.log('Message sent: ' + info.response);
