@@ -14,5 +14,6 @@ Run:
 <br>
 Then:
 ```
-
+$ Mail: *your email*
+$ Password: *your password*
 ```
